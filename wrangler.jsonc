@@ -17,8 +17,12 @@
   ],
   // ⚠️ R2 是可选的 —— 如果你改用其他 S3 兼容存储（见下方 analytics_engine_datasets），
   //    可以注释掉这个 r2_buckets 块，把存储完全交给外部 S3。
-
-
+"r2_buckets": [
+    {
+      "binding": "r2",
+      "bucket_name": "cloud-r2pan"
+    }
+  ],
   // ═══════════════ Workers Analytics Engine（全球分布分析） ═══════════════
   // 每次下载都会向这个 dataset 写入一个数据点，包含国家、经纬度、文件名等。
   // 绑定是可选的：没绑定时全球分布 Tab 会降级使用 D1 的 download_logs。
